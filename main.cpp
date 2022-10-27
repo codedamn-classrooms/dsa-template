@@ -1,44 +1,33 @@
+// Lab Template
+
 #include <iostream>
+#include <sstream>
+#include <string>
 #include <vector>
 
 using namespace std;
 
-vector<string> split(string str, char del)
+
+void solve(vector<string> multilineInput) {
+    cout << "Solve me!" << endl;
+}
+
+
+vector<string> split_string_by_newline(const string& str)
 {
-
-    string temp = "";
-    vector<string> result;
-
-    for (int i = 0; i < (int)str.size(); i++)
-    {
-        if (str[i] != del)
-        {
-            temp += str[i];
-        }
-        else
-        {
-            result.push_back(temp);
-            temp = "";
-        }
-    }
-
-    result.push_back(temp);
-
+    auto result = vector<string>{};
+    auto ss = stringstream{str};
+    for (string line; getline(ss, line, '\n');)
+        result.push_back(line);
     return result;
 }
 
-int main(int argc, char **argv)
-{
-    if (argc < 2)
-    {
+int main(int argc, char **argv) {
+    if (argc < 2) {
         cout << "command line args missing" << endl;
         return 0;
     }
-
-    string multilineInput = argv[1];
-    vector<string> inputValues = split(multilineInput, '\n');
-    cout << inputValues.size() << endl;
-    cout << "lab template" << endl;
-
+    vector<string> multilineInput = split_string_by_newline(argv[1]);
+    solve(multilineInput);
     return 0;
 }

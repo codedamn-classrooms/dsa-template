@@ -1,11 +1,16 @@
+// Lab Template
 
 public class Main {
+    public static void solve(String multilineInput[]) {
+        System.out.println("Solve me!");
+    }
+
+
     public static void main(String args[]) {
         if (args.length == 0) {
-            throw new Error("Multiline input argument is missing");
+            throw new Error("command line args missing");
         }
-        String multilineInput = args[0];
-        String[] inputValues = multilineInput.split("\n");
-        System.out.println("lab template " + inputValues.length);
+        String[] multilineInput = args[0].split("\n");
+        solve(multilineInput);
     }
 }
