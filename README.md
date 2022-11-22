@@ -1,2 +1,1 @@
-# dsa-template
-Starter template for codedamn DSA Labs
+# Starter template for codedamn I/O Labs
